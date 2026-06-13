@@ -1,0 +1,595 @@
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #FFFFFF;
+    color: #111111;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== NAVIGATION BAR ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 0.8rem 0;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left .logo {
+    height: 40px;
+    display: block;
+}
+
+.nav-center {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #111111;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #00A884;
+}
+
+.nav-link.active {
+    color: #00A884;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00A884, #00C896);
+}
+
+.btn-download-nav {
+    background: #111111;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-download-nav:hover {
+    background: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-download-nav img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* ===== LEFT SIDE: PHONE IMAGE ===== */
+.hero-left {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.phone-scene {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.1));
+}
+
+/* Glow Effect */
+.glow-backdrop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 168, 132, 0.12) 0%, rgba(0, 200, 150, 0.03) 40%, transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
+}
+
+/* iPhone Mockup */
+.iphone-mockup {
+    position: relative;
+    width: 340px;
+    height: 690px;
+    background: linear-gradient(145deg, #1a1a1a, #000000);
+    border-radius: 50px;
+    padding: 14px;
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.iphone-notch {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 30px;
+    background: #000000;
+    border-radius: 0 0 20px 20px;
+    z-index: 3;
+}
+
+.iphone-screen {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 38px;
+    overflow: hidden;
+    position: relative;
+}
+
+.screen-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Floating Cards */
+.floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 18px;
+    padding: 1.2rem 1.4rem;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.08),
+        0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.floating-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 
+        0 20px 40px rgba(0, 168, 132, 0.15),
+        0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-icon-circle {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #00A884, #00C896);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 168, 132, 0.3);
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111111;
+    margin: 0;
+}
+
+.card-text {
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Card Positions & Animations */
+.card-top-left {
+    top: 8%;
+    left: -8%;
+    max-width: 200px;
+    animation: float-1 6s ease-in-out infinite;
+}
+
+.card-top-right {
+    top: 12%;
+    right: -10%;
+    max-width: 200px;
+    animation: float-2 7s ease-in-out infinite;
+}
+
+.card-bottom-left {
+    bottom: 22%;
+    left: -10%;
+    max-width: 180px;
+    animation: float-3 8s ease-in-out infinite;
+}
+
+.card-bottom-right {
+    bottom: 12%;
+    right: -8%;
+    max-width: 190px;
+    animation: float-4 6.5s ease-in-out infinite;
+}
+
+@keyframes float-1 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes float-2 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes float-3 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-18px); }
+}
+
+@keyframes float-4 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-22px); }
+}
+
+/* ===== RIGHT SIDE: CONTENT ===== */
+.hero-right {
+    animation: fadeInRight 0.8s ease-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-content {
+    max-width: 580px;
+}
+
+/* Eco Badge */
+.eco-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(0, 168, 132, 0.08);
+    border: 1px solid rgba(0, 168, 132, 0.15);
+    padding: 0.65rem 1.3rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+}
+
+.badge-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.badge-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #00A884;
+    letter-spacing: 0.8px;
+}
+
+/* Hero Heading */
+.hero-heading {
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #111111;
+    margin: 0 0 1.2rem 0;
+    letter-spacing: -3px;
+}
+
+.gradient-word {
+    background: linear-gradient(135deg, #00A884 0%, #00C896 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* Hero Description */
+.hero-description {
+    font-size: 19px;
+    line-height: 1.65;
+    color: #666666;
+    margin: 0 0 2rem 0;
+    max-width: 540px;
+}
+
+/* CTA Buttons */
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 1.1rem 2.2rem;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: #111111;
+    color: #FFFFFF;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+    background: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary img {
+    filter: brightness(0) invert(1);
+}
+
+.btn-secondary {
+    background: #FFFFFF;
+    color: #111111;
+    border: 2px solid #E5E7EB;
+}
+
+.btn-secondary:hover {
+    border-color: #00A884;
+    color: #00A884;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 168, 132, 0.1);
+}
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet */
+@media (max-width: 1200px) {
+    .hero-container {
+        gap: 3rem;
+    }
+
+    .hero-heading {
+        font-size: 64px;
+    }
+
+    .phone-scene {
+        max-width: 400px;
+        height: 650px;
+    }
+
+    .iphone-mockup {
+        width: 300px;
+        height: 610px;
+    }
+
+    .floating-card {
+        padding: 1rem 1.2rem;
+    }
+
+    .card-top-left,
+    .card-top-right,
+    .card-bottom-left,
+    .card-bottom-right {
+        max-width: 170px;
+    }
+}
+
+/* Mobile Large */
+@media (max-width: 968px) {
+    .nav-center {
+        display: none;
+    }
+
+    .nav-container {
+        padding: 0 2rem;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        padding: 2rem;
+    }
+
+    .hero-left {
+        order: 2;
+    }
+
+    .hero-right {
+        order: 1;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .eco-badge {
+        display: inline-flex;
+    }
+
+    .hero-heading {
+        font-size: 52px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+
+    .phone-scene {
+        max-width: 350px;
+        height: 600px;
+    }
+
+    .iphone-mockup {
+        width: 280px;
+        height: 570px;
+    }
+
+    .floating-card {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+
+    .nav-left .logo {
+        height: 32px;
+    }
+
+    .btn-download-nav {
+        padding: 0.6rem 1.2rem;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding-top: 80px;
+    }
+
+    .hero-container {
+        padding: 1.5rem;
+        gap: 3rem;
+    }
+
+    .hero-heading {
+        font-size: 40px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+    .cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 2rem;
+    }
+
+    .phone-scene {
+        max-width: 280px;
+        height: 500px;
+    }
+
+    .iphone-mockup {
+        width: 240px;
+        height: 490px;
+    }
+}
