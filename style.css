@@ -1169,7 +1169,7 @@ body {
 .footer-main::before {
     content: '';
     position: absolute;
-    top: -250px;
+    top: -300px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -1193,7 +1193,7 @@ body {
 
 .footer-left {
     max-width: 550px;
-    padding-top: 60px;
+    padding-top: 200px;
     padding-bottom: 0;
 }
 
@@ -1793,8 +1793,8 @@ body {
 
     /* Footer */
     .footer-main {
-        padding: 100px 0 0;
-        min-height: 550px;
+        padding: 80px 0 0;
+        min-height: 500px;
     }
     
     .footer-main::before {
@@ -1803,42 +1803,46 @@ body {
     }
     
     .footer-container {
-        padding: 2rem 1.5rem 0;
+        padding: 1rem 1.5rem 0;
+        gap: 2rem;
     }
     
     .footer-left {
-        padding-top: 30px;
+        padding-top: 20px;
         padding-bottom: 0;
     }
     
     .footer-logo {
         height: 40px;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .footer-heading {
         font-size: 42px;
         letter-spacing: -2px;
+        margin-bottom: 1rem;
     }
     
     .footer-description {
         font-size: 18px;
+        margin-bottom: 0;
     }
     
     .footer-right {
         display: flex;
         align-items: center;
-        padding-top: 20px;
+        padding-top: 10px;
     }
     
     .footer-mobile-img {
         max-width: 100%;
+        margin-bottom: 0.5rem;
     }
 
     .footer-bottom {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin: -4rem auto 0;
+        gap: 1.2rem;
+        margin: -2rem auto 0;
         padding: 0 1.5rem 1rem;
         text-align: center;
     }
@@ -1994,47 +1998,51 @@ body {
 
     /* Footer */
     .footer-main {
-        padding: 80px 0 0;
-        min-height: 500px;
+        padding: 60px 0 0;
+        min-height: 450px;
     }
     
     .footer-main::before {
-        top: -80px;
+        top: -60px;
     }
     
     .footer-container {
-        padding: 1.5rem 1rem 0;
+        padding: 1rem 1rem 0;
+        gap: 1.5rem;
     }
     
     .footer-left {
-        padding-top: 20px;
+        padding-top: 10px;
     }
     
     .footer-logo {
         height: 35px;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
     }
 
     .footer-heading {
         font-size: 32px;
         letter-spacing: -1.5px;
+        margin-bottom: 0.8rem;
     }
     
     .footer-description {
         font-size: 16px;
         line-height: 1.5;
+        margin-bottom: 0;
     }
     
     .footer-right {
-        padding-top: 10px;
+        padding-top: 5px;
     }
     
     .footer-mobile-img {
         max-width: 320px;
+        margin-bottom: 0;
     }
 
     .footer-bottom {
-        margin: -3rem auto 0;
+        margin: -1.5rem auto 0;
         padding: 0 1rem 0.5rem;
         gap: 1rem;
     }
