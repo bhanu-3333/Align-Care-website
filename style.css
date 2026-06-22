@@ -1120,7 +1120,8 @@ body {
     text-align: center;
     background: #FFFFFF;
     position: relative;
-    z-index: 10;
+    z-index: 0;
+    
 }
 
 .cta-top-container {
@@ -1143,6 +1144,7 @@ body {
     gap: 0.6rem;
     margin-top: 2rem;
     transition: all 0.3s ease;
+    margin-bottom: 0px;
 }
 
 .cta-download-btn:hover {
@@ -1162,7 +1164,7 @@ body {
     position: relative;
     min-height: 650px;
     background: #FFFFFF;
-    padding: 150px 0 0;
+    padding: 120px 0 0;
     margin: 0;
 }
 
