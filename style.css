@@ -1679,6 +1679,10 @@ body {
         max-width: 100%;
     }
     
+    .hero-left {
+        display: none;
+    }
+    
     /* CTA Section */
     .cta-top {
         padding: 60px 0 30px;
