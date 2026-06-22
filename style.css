@@ -433,7 +433,15 @@ body {
     color: #111111;
     border: 2px solid #E5E7EB;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.btn-secondary img {
+    margin-top: 2px;
 }
 
 .btn-secondary:hover {
