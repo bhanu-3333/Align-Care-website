@@ -217,7 +217,7 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team-section">
+    <section class="team-section" id="about"></section>
         <div class="team-container">
             
             <!-- Section Header -->
@@ -241,7 +241,7 @@
                     <h3 class="member-name">Dr. K. Nemisri</h3>
                     <p class="member-role">Founder</p>
                     <p class="member-description">
-                       Conceptualized and proposed with the support of Ragas Dental College and Hospital, promoting a responsible and circular approach to aligner waste management.
+                       Conceptualized and proposed with the support of Ragas Dental College and Hospital, promoting a responsible and circular approach to aligner waste.
                     </p>
                     <a href="#" target="_blank" class="linkedin-btn">
                         <img src="./asserts/social-media.png" alt="LinkedIn" class="linkedin-icon">
@@ -251,9 +251,9 @@
                 <!-- Team Member 2 -->
                 <div class="team-card">
                     <h3 class="member-name">S.Udaya Bhanu</h3>
-                    <p class="member-role">Backend Developer</p>
+                    <p class="member-role">Mobile App Developer</p>
                     <p class="member-description">
-                       Engineered the backend systems of Align Care, ensuring secure data flow and seamless coordination across the platform.
+                      Implemented key mobile app features for Align Care, including user workflows for waste submission, pickup tracking, and status monitoring.
                     </p>
                     <a href="https://www.linkedin.com/in/udaya-bhanu-s-3003972a6/" target="_blank" class="linkedin-btn">
                         <img src="./asserts/social-media.png" alt="LinkedIn" class="linkedin-icon">
@@ -277,7 +277,7 @@
                     <h3 class="member-name">M. Priyanka</h3>
                     <p class="member-role">Backend Developer</p>
                     <p class="member-description">
-                      Architected the backend infrastructure that powers Align Care, enabling reliable operations and scalable digital workflows.
+                      Contributed to the development of core mobile app modules, ensuring seamless navigation and accessibility across essential Align Care services.
                     </p>
                     <a href="https://www.linkedin.com/in/thejashwini-d/" target="_blank" class="linkedin-btn">
                         <img src="./asserts/social-media.png" alt="LinkedIn" class="linkedin-icon">
@@ -298,11 +298,11 @@
 
                 <!-- Team Member 6 -->
                 <div class="team-card">
-                    <h3 class="member-name">Udaya Bhanu</h3>
-                    <p class="member-role">Mobile App Developer</p>
+                    <h3 class="member-name">Sakthi Kumar</h3>
+                    <p class="member-role">Frontend Developer</p>
                     <p class="member-description">
-                       Built the native mobile experience for Align Care, implementing seamless waste tracking, real-time collection updates, and intuitive user interfaces across iOS and Android platforms.
-                    </p>
+                      Brought Align Care's frontend experience to life by building interactive interfaces that make waste management simple and accessible.
+                      </p>
                     <a href="#" target="_blank" class="linkedin-btn">
                         <img src="./asserts/social-media.png" alt="LinkedIn" class="linkedin-icon">
                     </a>
@@ -337,7 +337,7 @@
     </section>
 
     <!-- Final CTA Section -->
-    <section class="final-cta-section">
+    <section class="final-cta-section" id="contact"></section>
         <div class="cta-top">
             <div class="cta-top-container">
                 <!-- Badge -->
@@ -430,4 +430,39 @@
     </section>
 
 </body>
+
+<script>
+// Navigation active state
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+
+// Add click event to nav links
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+// Update active state on scroll
+window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= (sectionTop - 200)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+        }
+    });
+});
+</script>
+
 </html></div></h2></div>
