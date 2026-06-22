@@ -1797,6 +1797,11 @@ body {
         min-height: 550px;
     }
     
+    .footer-main::before {
+        clip-path: none;
+        border-radius: 0;
+    }
+    
     .footer-container {
         padding: 2rem 1.5rem 0;
     }
